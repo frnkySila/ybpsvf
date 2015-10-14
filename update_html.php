@@ -231,7 +231,10 @@ if($update_html_output_file) {
 
                         echo $selected_tagline;
                     ?>
-                    <p><div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="small" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,gplus" data-yashareTheme="counter" data-yashareImage="http://st-im.kinopoisk.ru/im/kadr/2/2/4/kinopoisk.ru-Carrie-2240454.jpg"></div>
+                    <p>
+                        <!-- Тут я че-то наговнякал со стилями элементов - это потому что они в хроме криво стояли -->
+                        <div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="small" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,gplus" data-yashareTheme="counter" data-yashareImage="http://st-im.kinopoisk.ru/im/kadr/2/2/4/kinopoisk.ru-Carrie-2240454.jpg" style="display: inline-block; vertical-align: top;"></div>
+                        <a class="github-button" href="https://github.com/frnkySila/ybpsvf/fork" data-icon="octicon-repo-forked" data-count-href="/frnkySila/ybpsvf/network" data-count-api="/repos/frnkySila/ybpsvf#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork frnkySila/ybpsvf on GitHub" style="display: inline-block;">Fork</a>
                 </div>
             </div>
 
@@ -472,6 +475,8 @@ if($update_html_output_file) {
 
         <!-- <script src="static/js/plugins.js"></script> -->
         <script src="static/js/main.js"></script>
+        <!-- От кнопки гитхабовской -->
+        <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
     </body>
 </html>
 <?php
