@@ -6,3 +6,5 @@ config.inc.php
 # Библиотеки, скачанные скриптом composer
 vendor
 
+# Сгенерированный index.html
+index.html
