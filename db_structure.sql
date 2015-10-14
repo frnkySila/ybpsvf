@@ -8,6 +8,12 @@ CREATE TABLE `chart_data` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
+INSERT INTO `chart_data` (`id`, `chart_id`, `json_data`) VALUES
+(1, 'pie_chart_of_movie_scores', ''),
+(2, 'line_chart_daily_avg', ''),
+(3, 'bar_chart_views_dayofweek', ''),
+(4, 'largenumber_wasted_academic_hours', '');
+
 CREATE TABLE `movies` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `kinopoisk_url` varchar(32) NOT NULL,
