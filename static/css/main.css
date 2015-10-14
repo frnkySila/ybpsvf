@@ -1,0 +1,185 @@
+/* ==========================================================================
+   HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+img {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+body {
+    background: #fbfbfb;
+
+    color: #222;
+}
+
+div.wrapper {
+    padding: 0;
+}
+
+
+div.header {
+    padding: 100px 0 100px;
+}
+
+div.header h1 {
+    margin: 0 auto;
+
+    text-align: center;
+
+    color: #222;
+
+    font: 32px "Georgia", "Times New Roman", serif;
+    /*font-style: italic;*/
+    font-weight: bold;
+}
+
+div.header-info {
+    padding: 40px 10% 0;
+
+    margin-bottom: -35px;
+
+    /*text-indent: 2em;*/
+
+    text-align: center;
+
+    color: #666;
+
+    font: 0.9em serif;
+
+    font-style: italic;
+}
+
+div.header-info p {
+    margin-top: 0;
+}
+
+
+div.block {
+    margin-bottom: 80px;
+
+    padding: 0 5%;
+}
+
+div.block h2 {
+    margin: 30px 0 10px;
+
+    padding-left: 1em;
+
+    font: 1em "Times New Roman", serif; /* 1.1em !!! */
+    /*font-style: italic;*/
+    font-weight: bold;
+}
+
+div.block h2 span {
+    color: #bbb;
+
+    font-size: 0.8em;
+    font-weight: 100;
+}
+
+div.block-posters div {
+    display: inline-block;
+
+    margin-bottom: 4px;
+
+    margin-left: 4px;
+}
+
+div.block-posters img {
+    height: 160px;
+}
+
+div.block-info {
+    margin-left: 0px;
+
+    font: 1em "Times New Roman", serif;
+}
+
+div.block-bigposters {
+    margin-left: 0px;
+    margin-bottom: -25px;
+}
+
+div.block-bigposters img {
+    margin-bottom: 25px;
+}
+
+div.block-info em {
+    font-style: italic;
+
+    color: #888;
+}
+
+table {
+    width: 100%;
+}
+
+td {
+    width: 33%;
+}
+
+
+
+div.footer {
+    width:  100%;
+    height: 150px;
+
+    background: #49e;
+    margin: 100px 0 -25px;
+}
+

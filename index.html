@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Я буду просматривать сейчас все фильмы! — ybpsvf.ru</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="static/css/normalize.min.css">
+        <link rel="stylesheet" href="static/css/main.css">
+        <link rel="icon" type="image/png" href="/static/favicon.png" />
+
+       <!-- Картинка, которая появляется при постинге ссылки вконтактике -->
+       <link rel="image_src" href="http://st-im.kinopoisk.ru/im/kadr/2/2/4/kinopoisk.ru-Carrie-2240454.jpg" />
+
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+        <![endif]-->
+
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+          google.load("visualization", "1", {packages:["corechart"]});
+          google.setOnLoadCallback(drawChart);
+          function drawChart() {
+            var ratings_data = google.visualization.arrayToDataTable([
+                ['Оценка', 'Количество'],
+                ['1', 10],
+['2', 14],
+['3', 6],
+['4', 12],
+['5', 4],
+['6', 5],
+['7', 7],
+['8', 6],
+['9', 8],
+['10', 4],
+            ]);
+
+            (new google.visualization.PieChart(document.getElementById('ratings_chart'))).draw(ratings_data, {reverseCategories: false, is3D: true, legend: {position: 'none'}, chartArea:{top: 0, left: 30, width: "100%",height: "100%"}, colors:['rgb(32, 64, 128)', 'rgb(34, 68, 136)', 'rgb(37, 74, 147)', 'rgb(40, 80, 161)', 'rgb(44, 88, 176)', 'rgb(48, 96, 193)', 'rgb(52, 104, 208)', 'rgb(55, 112, 223)', 'rgb(59, 118, 236)', 'rgb(62, 123, 246)'], });
+
+            var average_data = google.visualization.arrayToDataTable([
+            ['День', 'Средняя оценка',],
+                ['12 июл', 3.0000],
+['13 июл', 1.0000],
+['14 июл', 4.8571],
+['15 июл', 1.0000],
+['16 июл', 1.0000],
+['17 июл', 4.2500],
+['18 июл', 4.2500],
+['19 июл', 4.2500],
+['20 июл', 4.2500],
+['21 июл', 4.2500],
+['22 июл', 4.2500],
+['23 июл', 4.2500],
+['24 июл', 4.2500],
+['25 июл', 4.2500],
+['26 июл', 4.2500],
+['27 июл', 4.2500],
+['28 июл', 4.2500],
+['29 июл', 4.2500],
+['30 июл', 4.2500],
+['31 июл', 4.2500],
+['01 авг', 4.2500],
+['02 авг', 4.2500],
+['03 авг', 4.2500],
+['04 авг', 4.2500],
+['05 авг', 4.2500],
+['06 авг', 4.5833],
+['07 авг', 4.5833],
+['08 авг', 4.1429],
+['09 авг', 4.1429],
+['10 авг', 4.1429],
+['11 авг', 4.1429],
+['12 авг', 4.1429],
+['13 авг', 4.1429],
+['14 авг', 4.1429],
+['15 авг', 4.1429],
+['16 авг', 4.1429],
+['17 авг', 4.1429],
+['18 авг', 4.1429],
+['19 авг', 4.1429],
+['20 авг', 4.1429],
+['21 авг', 4.1429],
+['22 авг', 4.1429],
+['23 авг', 4.1429],
+['24 авг', 4.1429],
+['25 авг', 4.1429],
+['26 авг', 4.1429],
+['27 авг', 4.1429],
+['28 авг', 4.1429],
+['29 авг', 4.1429],
+['30 авг', 4.1429],
+['31 авг', 4.1429],
+['01 сен', 4.1429],
+['02 сен', 4.1429],
+['03 сен', 4.1429],
+['04 сен', 4.1429],
+['05 сен', 4.1429],
+['06 сен', 4.1429],
+['07 сен', 4.1429],
+['08 сен', 4.1429],
+['09 сен', 4.1429],
+['10 сен', 4.1429],
+['11 сен', 4.1429],
+['12 сен', 4.1429],
+['13 сен', 4.1429],
+['14 сен', 4.1429],
+['15 сен', 4.1429],
+['16 сен', 4.1429],
+['17 сен', 4.1429],
+['18 сен', 4.1429],
+['19 сен', 4.1429],
+['20 сен', 4.1429],
+['21 сен', 4.1429],
+['22 сен', 4.1429],
+['23 сен', 4.1429],
+['24 сен', 4.1429],
+['25 сен', 4.1429],
+['26 сен', 4.1429],
+['27 сен', 4.1429],
+['28 сен', 4.1429],
+['29 сен', 4.1429],
+['30 сен', 4.1429],
+['01 окт', 4.1429],
+['02 окт', 4.1429],
+['03 окт', 4.1429],
+['04 окт', 4.1429],
+['05 окт', 4.1429],
+['06 окт', 4.1429],
+['07 окт', 4.1429],
+['08 окт', 4.1429],
+['09 окт', 4.1429],
+['10 окт', 4.1429],
+['11 окт', 4.1429],
+['12 окт', 4.1429],
+['13 окт', 4.1429],
+['14 окт', 4.1429],
+['15 окт', 4.1429],
+['16 окт', 4.1429],
+['17 окт', 4.1429],
+['18 окт', 4.1429],
+['19 окт', 4.1429],
+['20 окт', 4.1429],
+['21 окт', 4.1429],
+['22 окт', 4.1429],
+['23 окт', 4.1429],
+['24 окт', 4.1429],
+['25 окт', 4.1429],
+['26 окт', 4.1429],
+['27 окт', 4.1429],
+['28 окт', 4.1429],
+['29 окт', 4.1429],
+['30 окт', 4.1429],
+['31 окт', 4.1429],
+['01 ноя', 4.1429],
+['02 ноя', 4.1429],
+['03 ноя', 4.1429],
+['04 ноя', 4.1429],
+['05 ноя', 4.1429],
+['06 ноя', 4.1429],
+['07 ноя', 4.1429],
+['08 ноя', 4.1429],
+['09 ноя', 4.1429],
+['10 ноя', 4.1429],
+['11 ноя', 4.1429],
+['12 ноя', 4.1429],
+['13 ноя', 4.1429],
+['14 ноя', 4.1429],
+['15 ноя', 4.1429],
+['16 ноя', 4.1429],
+['17 ноя', 4.1429],
+['18 ноя', 4.1429],
+['19 ноя', 4.1429],
+['20 ноя', 4.1429],
+['21 ноя', 4.1429],
+['22 ноя', 4.1429],
+['23 ноя', 4.1429],
+['24 ноя', 4.1429],
+['25 ноя', 4.1429],
+['26 ноя', 4.1429],
+['27 ноя', 4.1429],
+['28 ноя', 4.1429],
+['29 ноя', 4.1429],
+['30 ноя', 4.1429],
+['01 дек', 4.1429],
+['02 дек', 4.1429],
+['03 дек', 4.1429],
+['04 дек', 4.1429],
+['05 дек', 4.1429],
+['06 дек', 4.1429],
+['07 дек', 4.1429],
+['08 дек', 4.1429],
+['09 дек', 4.1429],
+['10 дек', 4.1429],
+['11 дек', 4.5500],
+['12 дек', 4.5500],
+['13 дек', 4.5500],
+['14 дек', 4.5500],
+['15 дек', 4.5500],
+['16 дек', 4.5500],
+['17 дек', 4.5500],
+['18 дек', 4.5500],
+['19 дек', 4.5500],
+['20 дек', 4.5500],
+['21 дек', 4.5500],
+['22 дек', 4.5500],
+['23 дек', 4.5500],
+['24 дек', 4.5500],
+['25 дек', 4.5500],
+['26 дек', 4.5500],
+['27 дек', 4.5500],
+['28 дек', 4.5500],
+['29 дек', 4.5500],
+['30 дек', 4.5500],
+['31 дек', 4.5500],
+['01 янв', 4.5500],
+['02 янв', 4.5500],
+['03 янв', 4.5500],
+['04 янв', 4.5500],
+['05 янв', 4.5500],
+['06 янв', 4.5500],
+['07 янв', 4.5500],
+['08 янв', 4.5500],
+['09 янв', 4.5500],
+['10 янв', 4.5500],
+['11 янв', 4.5500],
+['12 янв', 4.3846],
+['13 янв', 4.3846],
+['14 янв', 4.3846],
+['15 янв', 4.3846],
+['16 янв', 4.3846],
+['17 янв', 4.3846],
+['18 янв', 4.3846],
+['19 янв', 4.3846],
+['20 янв', 4.5152],
+['21 янв', 4.5152],
+['22 янв', 4.5152],
+['23 янв', 4.5152],
+['24 янв', 4.5152],
+['25 янв', 4.5714],
+['26 янв', 4.5714],
+['27 янв', 4.5714],
+['28 янв', 4.5714],
+['29 янв', 4.5714],
+['30 янв', 4.5714],
+['31 янв', 4.9167],
+['01 фев', 4.9167],
+['02 фев', 4.9167],
+['03 фев', 4.9167],
+['04 фев', 4.9167],
+['05 фев', 4.9167],
+['06 фев', 4.7547],
+['07 фев', 4.7547],
+['08 фев', 4.7547],
+['09 фев', 4.7547],
+['10 фев', 4.7547],
+['11 фев', 4.7547],
+['12 фев', 4.7547],
+['13 фев', 4.7547],
+['14 фев', 4.7547],
+['15 фев', 4.7547],
+['16 фев', 4.7547],
+['17 фев', 4.7547],
+['18 фев', 4.7547],
+['19 фев', 4.7547],
+['20 фев', 4.7547],
+['21 фев', 4.7547],
+['22 фев', 4.7547],
+['23 фев', 4.7547],
+['24 фев', 4.7547],
+['25 фев', 4.7547],
+['26 фев', 4.7547],
+['27 фев', 4.7547],
+['28 фев', 4.7547],
+['01 мар', 4.7547],
+['02 мар', 4.7547],
+['03 мар', 4.4444],
+['04 мар', 4.4545],
+['05 мар', 4.4545],
+['06 мар', 4.5357],
+['07 мар', 4.5357],
+['08 мар', 4.5357],
+['09 мар', 4.5357],
+['10 мар', 4.5357],
+['11 мар', 4.5357],
+['12 мар', 4.5357],
+['13 мар', 4.5357],
+['14 мар', 4.5357],
+['15 мар', 4.5357],
+['16 мар', 4.5357],
+['17 мар', 4.5357],
+['18 мар', 4.5357],
+['19 мар', 4.5357],
+['20 мар', 4.5357],
+['21 мар', 4.5357],
+['22 мар', 4.5357],
+['23 мар', 4.5357],
+['24 мар', 4.5357],
+['25 мар', 4.5357],
+['26 мар', 4.5357],
+['27 мар', 4.5357],
+['28 мар', 4.5357],
+['29 мар', 4.5357],
+['30 мар', 4.5357],
+['31 мар', 4.5357],
+['01 апр', 4.5357],
+['02 апр', 4.5357],
+['03 апр', 4.5357],
+['04 апр', 4.5357],
+['05 апр', 4.5357],
+['06 апр', 4.5357],
+['07 апр', 4.5357],
+['08 апр', 4.5357],
+['09 апр', 4.5357],
+['10 апр', 4.5357],
+['11 апр', 4.5357],
+['12 апр', 4.5357],
+['13 апр', 4.5357],
+['14 апр', 4.5357],
+['15 апр', 4.5357],
+['16 апр', 4.5357],
+['17 апр', 4.5357],
+['18 апр', 4.5357],
+['19 апр', 4.5357],
+['20 апр', 4.5357],
+['21 апр', 4.5357],
+['22 апр', 4.7097],
+['23 апр', 4.7097],
+['24 апр', 4.7097],
+['25 апр', 4.7097],
+['26 апр', 4.7097],
+['27 апр', 4.7097],
+['28 апр', 4.7097],
+['29 апр', 4.7097],
+['30 апр', 4.7097],
+['01 мая', 4.7097],
+['02 мая', 4.7097],
+['03 мая', 4.7097],
+['04 мая', 4.7097],
+['05 мая', 4.7097],
+['06 мая', 4.7097],
+['07 мая', 4.7097],
+['08 мая', 4.7097],
+['09 мая', 4.7097],
+['10 мая', 4.7097],
+['11 мая', 4.7097],
+['12 мая', 4.7097],
+['13 мая', 4.7097],
+['14 мая', 4.7097],
+['15 мая', 4.7097],
+['16 мая', 4.7097],
+['17 мая', 4.7097],
+['18 мая', 4.7097],
+['19 мая', 4.7097],
+['20 мая', 4.7097],
+['21 мая', 4.7097],
+['22 мая', 4.7097],
+['23 мая', 4.7097],
+['24 мая', 4.7097],
+['25 мая', 4.7097],
+['26 мая', 4.7097],
+['27 мая', 4.7097],
+['28 мая', 4.7097],
+['29 мая', 4.7097],
+['30 мая', 4.7097],
+['31 мая', 4.7097],
+['01 июн', 4.7576],
+['02 июн', 4.7576],
+['03 июн', 4.7576],
+['04 июн', 4.7576],
+['05 июн', 4.7576],
+['06 июн', 4.7576],
+['07 июн', 4.7576],
+['08 июн', 4.7576],
+['09 июн', 4.7576],
+['10 июн', 4.7576],
+['11 июн', 4.7576],
+['12 июн', 4.7576],
+['13 июн', 4.7576],
+['14 июн', 4.7576],
+['15 июн', 4.7576],
+['16 июн', 4.7576],
+['17 июн', 4.7576],
+['18 июн', 4.7576],
+['19 июн', 4.7576],
+['20 июн', 4.7576],
+['21 июн', 4.7576],
+['22 июн', 4.7576],
+['23 июн', 4.7576],
+['24 июн', 4.7576],
+['25 июн', 4.7576],
+['26 июн', 4.7576],
+['27 июн', 4.7576],
+['28 июн', 4.7576],
+['29 июн', 4.7576],
+['30 июн', 4.7576],
+['01 июл', 4.7576],
+['02 июл', 4.7576],
+['03 июл', 4.7576],
+['04 июл', 4.7576],
+['05 июл', 4.7576],
+['06 июл', 4.7576],
+['07 июл', 4.7576],
+['08 июл', 4.7576],
+['09 июл', 4.7576],
+['10 июл', 4.7576],
+['11 июл', 4.7467],
+['12 июл', 4.7467],
+['13 июл', 4.7467],
+['14 июл', 4.7467],
+['15 июл', 4.7467],
+['16 июл', 4.7467],
+['17 июл', 4.7467],
+['18 июл', 4.7467],
+['19 июл', 4.7467],
+['20 июл', 4.7467],
+['21 июл', 4.7467],
+['22 июл', 4.7467],
+['23 июл', 4.7467],
+['24 июл', 4.7467],
+['25 июл', 4.7467],
+['26 июл', 4.7467],
+['27 июл', 4.7467],
+['28 июл', 4.7763],
+['29 июл', 4.7763],
+['30 июл', 4.7763],
+['31 июл', 4.7763],
+['01 авг', 4.7763],
+['02 авг', 4.7763],
+['03 авг', 4.7763],
+['04 авг', 4.7763],
+['05 авг', 4.7763],
+['06 авг', 4.7763],
+['07 авг', 4.7763],
+['08 авг', 4.7763],
+['09 авг', 4.7763],
+['10 авг', 4.7763],
+['11 авг', 4.7763],
+['12 авг', 4.7763],
+['13 авг', 4.7763],
+['14 авг', 4.7763],
+['15 авг', 4.7763],
+['16 авг', 4.7763],
+['17 авг', 4.7763],
+['18 авг', 4.7763],
+['19 авг', 4.7763],
+['20 авг', 4.7763],
+['21 авг', 4.7763],
+['22 авг', 4.7763],
+['23 авг', 4.7763],
+['24 авг', 4.7763],
+['25 авг', 4.7763],
+['26 авг', 4.7763],
+['27 авг', 4.7763],
+['28 авг', 4.7763],
+['29 авг', 4.7763],
+['30 авг', 4.7763],
+['31 авг', 4.7763],
+['01 сен', 4.7763],
+['02 сен', 4.7763],
+['03 сен', 4.7763],
+['04 сен', 4.7763],
+['05 сен', 4.7763],
+['06 сен', 4.7763],
+['07 сен', 4.7763],
+['08 сен', 4.7763],
+['09 сен', 4.7763],
+['10 сен', 4.7763],
+['11 сен', 4.7763],
+['12 сен', 4.7763],
+['13 сен', 4.7763],
+['14 сен', 4.7763],
+['15 сен', 4.7763],
+['16 сен', 4.7763],
+['17 сен', 4.7763],
+['18 сен', 4.7763],
+['19 сен', 4.7763],
+['20 сен', 4.7763],
+['21 сен', 4.7763],
+['22 сен', 4.7763],
+['23 сен', 4.7763],
+['24 сен', 4.7763],
+['25 сен', 4.7763],
+['26 сен', 4.7763],
+['27 сен', 4.7763],
+['28 сен', 4.7763],
+['29 сен', 4.7763],
+['30 сен', 4.7763],
+['01 окт', 4.7763],
+['02 окт', 4.7763],
+['03 окт', 4.7763],
+['04 окт', 4.7763],
+['05 окт', 4.7763],
+['06 окт', 4.7763],
+['07 окт', 4.7763],
+['08 окт', 4.7763],
+['09 окт', 4.7763],
+['10 окт', 4.7763],
+['11 окт', 4.7763],
+['12 окт', 4.7763],
+['13 окт', 4.7763],
+['14 окт', 4.7763],
+            ]);
+
+            new google.visualization.LineChart(document.getElementById('average_chart')).draw(average_data, {hAxis: {textPosition: 'none'}, vAxis: {ticks: [1,2,3,4,5,6,7,8,9,10]}, legend: {position: 'none'}, chartArea:{top: 50, left: 70, width: "80%",height: "75%"}, });
+
+            var dayofweek_data = google.visualization.arrayToDataTable([
+            ['День недели', 'Просмотры',],
+                ['Пн', 6],
+['Вт', 9],
+['Ср', 22],
+['Чт', 8],
+['Пт', 9],
+['Сб', 18],
+['Вс', 4],
+            ]);
+
+            new google.visualization.ColumnChart(document.getElementById('dayofweek_chart')).draw(dayofweek_data, {legend: {position: 'none'}, chartArea:{top: 50, left: 70, width: "80%",height: "75%"}, });
+
+            var correlation_data = google.visualization.arrayToDataTable([
+              [' ', ' '],
+                  [7.235, 9],
+[7.343, 5],
+[5.184, 2],
+[6.257, 8],
+[6.509, 3],
+[5.801, 6],
+[6.255, 1],
+[6.292, 4],
+[6.718, 2],
+[6.417, 7],
+[7.361, 1],
+[6.360, 7],
+[7.869, 4],
+[6.139, 2],
+[5.528, 1],
+[6.396, 2],
+[6.388, 4],
+[8.806, 9],
+[4.837, 10],
+[7.944, 3],
+[6.717, 1],
+[6.563, 1],
+[7.118, 9],
+[6.650, 4],
+[5.645, 2],
+[6.001, 3],
+[5.527, 3],
+[6.838, 3],
+[5.979, 4],
+[2.932, 2],
+[6.531, 4],
+[6.306, 4],
+[5.474, 2],
+[8.143, 6],
+[5.108, 4],
+[6.129, 2],
+[7.292, 8],
+[7.333, 9],
+[5.606, 2],
+[4.000, 1],
+[7.359, 7],
+[7.487, 6],
+[4.607, 5],
+[6.853, 8],
+[6.127, 7],
+[7.968, 7],
+[5.739, 2],
+[6.399, 8],
+[5.858, 4],
+[7.428, 1],
+[7.626, 2],
+[7.248, 2],
+[4.598, 4],
+[8.080, 5],
+[4.042, 4],
+[6.770, 4],
+[8.034, 6],
+[6.060, 1],
+[7.971, 9],
+[6.870, 1],
+[6.957, 10],
+[7.622, 8],
+[6.504, 10],
+[6.865, 9],
+[7.398, 3],
+[8.036, 2],
+[7.864, 8],
+[7.476, 10],
+[7.359, 9],
+[6.455, 5],
+[8.468, 7],
+[6.890, 2],
+[8.199, 7],
+            ]);
+
+            new google.visualization.ScatterChart(document.getElementById('correlation_chart')).draw(correlation_data, {legend: {position: 'none'}, hAxis: {title: 'Кинопоиск', minValue: 1, maxValue: 10}, vAxis: {title: 'Я', minValue: 1, maxValue: 10}, chartArea:{top: 50, left: 70, width: "80%",height: "75%"}, trendlines: { 0: { type: 'polynomial', color: 'rgb(44, 88, 176)', lineWidth: 5, opacity: 0.5, showR2: false } }, });
+
+          }
+        </script>
+        <script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script>
+    </head>
+    <body>
+
+        <div class="wrapper">
+
+            <div class="header">
+                <h1>Я буду просматривать сейчас все фильмы!</h1>
+                <div class="header-info">
+                    <p>Every dream begins with a single step                    <p><div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="small" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,gplus" data-yashareTheme="counter" data-yashareImage="http://st-im.kinopoisk.ru/im/kadr/2/2/4/kinopoisk.ru-Carrie-2240454.jpg"></div>
+                </div>
+            </div>
+
+            <div class="block"><h2>Сегодня в кино</h2><div class="block-posters"><div><a target="_blank" href="http://www.kinopoisk.ru/film/518042/"><img src="./poster_thumbs/thumb400_518042.jpg" title="Агенты А.Н.К.Л." /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/797574/"><img src="./poster_thumbs/thumb400_797574.jpg" title="Душа шпиона" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/677893/"><img src="./poster_thumbs/thumb400_677893.jpg" title="Стажёр" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/839954/"><img src="./poster_thumbs/thumb400_839954.jpg" title="Легенда" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/841700/"><img src="./poster_thumbs/thumb400_841700.jpg" title="Марсианин" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/843175/"><img src="./poster_thumbs/thumb400_843175.jpg" title="Воин" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/829368/"><img src="./poster_thumbs/thumb400_829368.jpg" title="Прогулка" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/842673/"><img src="./poster_thumbs/thumb400_842673.jpg" title="Бегущий в лабиринте: Испытание огнём" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/744443/"><img src="./poster_thumbs/thumb400_744443.jpg" title="Переполох в джунглях" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/933266/"><img src="./poster_thumbs/thumb400_933266.jpg" title="МУЛЬТ в кино. Выпуск №15" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/645118/"><img src="./poster_thumbs/thumb400_645118.jpg" title="Головоломка — 7/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/840573/"><img src="./poster_thumbs/thumb400_840573.jpg" title="Врата тьмы" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/781432/"><img src="./poster_thumbs/thumb400_781432.jpg" title="14+" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/625402/"><img src="./poster_thumbs/thumb400_625402.jpg" title="Выхода нет" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/808093/"><img src="./poster_thumbs/thumb400_808093.jpg" title="Пэн: Путешествие в Нетландию" /></a></div></div></div>
+            <div class="block"><h2>Просмотрено <span>76</span></h2><div class="block-posters"><div><a target="_blank" href="http://www.kinopoisk.ru/film/436225/"><img src="./poster_thumbs/thumb400_436225.jpg" title="Терминатор: Генезис — 2/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/677683/"><img src="./poster_thumbs/thumb400_677683.jpg" title="Между делом — 6/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/765103/"><img src="./poster_thumbs/thumb400_765103.jpg" title="Духless 2 — 10/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/757182/"><img src="./poster_thumbs/thumb400_757182.jpg" title="Белый Бог — 10/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/552698/"><img src="./poster_thumbs/thumb400_552698.jpg" title="Простушка — 4/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/669880/"><img src="./poster_thumbs/thumb400_669880.jpg" title="Книга жизни — 2/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/645118/"><img src="./poster_thumbs/thumb400_645118.jpg" title="Головоломка — 7/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/680824/"><img src="./poster_thumbs/thumb400_680824.jpg" title="Фокус — 2/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/749540/"><img src="./poster_thumbs/thumb400_749540.jpg" title="Kingsman: Секретная служба — 5/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/581952/"><img src="./poster_thumbs/thumb400_581952.jpg" title="Лофт — 1/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/596643/"><img src="./poster_thumbs/thumb400_596643.jpg" title="Земля будущего — 5/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/601933/"><img src="./poster_thumbs/thumb400_601933.jpg" title="Территория — 10/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/453406/"><img src="./poster_thumbs/thumb400_453406.jpg" title="Безумный Макс: Дорога ярости — 7/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/679830/"><img src="./poster_thumbs/thumb400_679830.jpg" title="Мстители: Эра Альтрона — 2/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/646674/"><img src="./poster_thumbs/thumb400_646674.jpg" title="Планета обезьян: Революция — 9/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/653695/"><img src="./poster_thumbs/thumb400_653695.jpg" title="Поддубный — 5/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/722886/"><img src="./poster_thumbs/thumb400_722886.jpg" title="Миллион способов потерять голову — 8/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/687670/"><img src="./poster_thumbs/thumb400_687670.jpg" title="Превосходство — 3/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/522016/"><img src="./poster_thumbs/thumb400_522016.jpg" title="Король сафари — 6/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/734276/"><img src="./poster_thumbs/thumb400_734276.jpg" title="Шаг вперёд: Всё или ничего — 1/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/672899/"><img src="./poster_thumbs/thumb400_672899.jpg" title="Мачо и ботан 2 — 2/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/502093/"><img src="./poster_thumbs/thumb400_502093.jpg" title="Любовь по рецепту и без — 7/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/748663/"><img src="./poster_thumbs/thumb400_748663.jpg" title="Безумная свадьба — 1/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/713260/"><img src="./poster_thumbs/thumb400_713260.jpg" title="А вот и она — 7/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/754481/"><img src="./poster_thumbs/thumb400_754481.jpg" title="Форсаж 7 — 3/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/742026/"><img src="./poster_thumbs/thumb400_742026.jpg" title="Битва за Севастополь — 8/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/591485/"><img src="./poster_thumbs/thumb400_591485.jpg" title="Робот по имени Чаппи — 8/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/839960/"><img src="./poster_thumbs/thumb400_839960.jpg" title="Призрак — 9/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/533954/"><img src="./poster_thumbs/thumb400_533954.jpg" title="Золушка — 9/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/672398/"><img src="./poster_thumbs/thumb400_672398.jpg" title="Губка Боб в 3D — 4/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/675697/"><img src="./poster_thumbs/thumb400_675697.jpg" title="Женщина в черном 2: Ангел смерти — 4/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/808179/"><img src="./poster_thumbs/thumb400_808179.jpg" title="Кровавая леди Батори — 4/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/251733/"><img src="./poster_thumbs/thumb400_251733.jpg" title="Аватар — 6/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/775727/"><img src="./poster_thumbs/thumb400_775727.jpg" title="Дикие истории — 7/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/770973/"><img src="./poster_thumbs/thumb400_770973.jpg" title="Вселенная Стивена Хокинга — 9/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/681881/"><img src="./poster_thumbs/thumb400_681881.jpg" title="Батальонъ — 1/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/688832/"><img src="./poster_thumbs/thumb400_688832.jpg" title="Пятьдесят оттенков серого — 4/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/744284/"><img src="./poster_thumbs/thumb400_744284.jpg" title="Голые перцы — 2/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/824611/"><img src="./poster_thumbs/thumb400_824611.jpg" title="Звериный отряд — 1/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/751916/"><img src="./poster_thumbs/thumb400_751916.jpg" title="8 новых свиданий — 4/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/683919/"><img src="./poster_thumbs/thumb400_683919.jpg" title="Снайпер — 9/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/505966/"><img src="./poster_thumbs/thumb400_505966.jpg" title="Восхождение Юпитер — 1/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/669910/"><img src="./poster_thumbs/thumb400_669910.jpg" title="Чёрное море — 8/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/798490/"><img src="./poster_thumbs/thumb400_798490.jpg" title="Феи: Легенда о чудовище (видео) — 6/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/675573/"><img src="./poster_thumbs/thumb400_675573.jpg" title="Вызов бездне 3D — 7/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/645087/"><img src="./poster_thumbs/thumb400_645087.jpg" title="Тупой и еще тупее 2 — 2/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/773193/"><img src="./poster_thumbs/thumb400_773193.jpg" title="Медведи-соседи: Зимние каникулы — 1/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/614227/"><img src="./poster_thumbs/thumb400_614227.jpg" title="Игрок — 7/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/762738/"><img src="./poster_thumbs/thumb400_762738.jpg" title="Джон Уик — 8/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/762884/"><img src="./poster_thumbs/thumb400_762884.jpg" title="Ограбление по-американски — 5/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/765082/"><img src="./poster_thumbs/thumb400_765082.jpg" title="Мамы 3 — 2/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/712639/"><img src="./poster_thumbs/thumb400_712639.jpg" title="Заложница 3 — 2/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/687193/"><img src="./poster_thumbs/thumb400_687193.jpg" title="Ёлки 1914 — 4/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/737543/"><img src="./poster_thumbs/thumb400_737543.jpg" title="Ночь в музее: Секрет гробницы — 4/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/404/"><img src="./poster_thumbs/thumb400_404.jpg" title="Квартира — 6/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/809087/"><img src="./poster_thumbs/thumb400_809087.jpg" title="Три богатыря: Ход конем — 3/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/573869/"><img src="./poster_thumbs/thumb400_573869.jpg" title="Большие глаза — 8/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/577211/"><img src="./poster_thumbs/thumb400_577211.jpg" title="Несломленный — 9/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/662996/"><img src="./poster_thumbs/thumb400_662996.jpg" title="Чем дальше в лес... — 4/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/718559/"><img src="./poster_thumbs/thumb400_718559.jpg" title="Снежная королева 2: Перезаморозка — 2/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/408396/"><img src="./poster_thumbs/thumb400_408396.jpg" title="Седьмой сын — 3/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/484611/"><img src="./poster_thumbs/thumb400_484611.jpg" title="Исход: Цари и боги — 3/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/607608/"><img src="./poster_thumbs/thumb400_607608.jpg" title="Пингвины Мадагаскара — 1/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/765083/"><img src="./poster_thumbs/thumb400_765083.jpg" title="Что творят мужчины! 2 — 2/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/461958/"><img src="./poster_thumbs/thumb400_461958.jpg" title="Геракл — 2/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/684471/"><img src="./poster_thumbs/thumb400_684471.jpg" title="За тридевять земель — 4/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/694633/"><img src="./poster_thumbs/thumb400_694633.jpg" title="Хоббит: Битва пяти воинств — 3/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/679924/"><img src="./poster_thumbs/thumb400_679924.jpg" title="Патруль времени — 9/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/661911/"><img src="./poster_thumbs/thumb400_661911.jpg" title="Голодные игры: Сойка-пересмешница. Часть I — 1/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/810243/"><img src="./poster_thumbs/thumb400_810243.jpg" title="Горько! 2 — 10/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/258687/"><img src="./poster_thumbs/thumb400_258687.jpg" title="Интерстеллар — 9/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/689066/"><img src="./poster_thumbs/thumb400_689066.jpg" title="Стражи Галактики — 4/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/655618/"><img src="./poster_thumbs/thumb400_655618.jpg" title="Домашнее видео — 1/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/770805/"><img src="./poster_thumbs/thumb400_770805.jpg" title="Судная ночь 2 — 2/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/489291/"><img src="./poster_thumbs/thumb400_489291.jpg" title="Оз: Возвращение в Изумрудный Город — 2/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/651857/"><img src="./poster_thumbs/thumb400_651857.jpg" title="Трансформеры: Эпоха истребления — 4/10" /></a></div></div></div>
+            <div class="block"><h2>Осталось посмотреть <span>77</span></h2><div class="block-posters"><div><a target="_blank" href="http://www.kinopoisk.ru/film/699427/"><img src="./poster_thumbs/thumb400_699427.jpg" title="Волчье логово" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/930796/"><img src="./poster_thumbs/thumb400_930796.jpg" title="Алиса знает, что делать! Зеленая месть" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/677893/"><img src="./poster_thumbs/thumb400_677893.jpg" title="Стажёр" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/808093/"><img src="./poster_thumbs/thumb400_808093.jpg" title="Пэн: Путешествие в Нетландию" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/829368/"><img src="./poster_thumbs/thumb400_829368.jpg" title="Прогулка" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/744443/"><img src="./poster_thumbs/thumb400_744443.jpg" title="Переполох в джунглях" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/933266/"><img src="./poster_thumbs/thumb400_933266.jpg" title="МУЛЬТ в кино. Выпуск №15" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/841700/"><img src="./poster_thumbs/thumb400_841700.jpg" title="Марсианин" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/839954/"><img src="./poster_thumbs/thumb400_839954.jpg" title="Легенда" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/797574/"><img src="./poster_thumbs/thumb400_797574.jpg" title="Душа шпиона" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/625402/"><img src="./poster_thumbs/thumb400_625402.jpg" title="Выхода нет" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/840573/"><img src="./poster_thumbs/thumb400_840573.jpg" title="Врата тьмы" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/843175/"><img src="./poster_thumbs/thumb400_843175.jpg" title="Воин" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/842673/"><img src="./poster_thumbs/thumb400_842673.jpg" title="Бегущий в лабиринте: Испытание огнём" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/518042/"><img src="./poster_thumbs/thumb400_518042.jpg" title="Агенты А.Н.К.Л." /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/781432/"><img src="./poster_thumbs/thumb400_781432.jpg" title="14+" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/471642/"><img src="./poster_thumbs/thumb400_471642.jpg" title="Фантастическая четверка" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/603191/"><img src="./poster_thumbs/thumb400_603191.jpg" title="Смурфики 2" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/178591/"><img src="./poster_thumbs/thumb400_178591.jpg" title="Смурфики" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/744668/"><img src="./poster_thumbs/thumb400_744668.jpg" title="Синистер 2" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/892585/"><img src="./poster_thumbs/thumb400_892585.jpg" title="Решала 2" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/888304/"><img src="./poster_thumbs/thumb400_888304.jpg" title="Подарок" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/678549/"><img src="./poster_thumbs/thumb400_678549.jpg" title="Миссия невыполнима: Племя изгоев" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/573990/"><img src="./poster_thumbs/thumb400_573990.jpg" title="Левша" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/779602/"><img src="./poster_thumbs/thumb400_779602.jpg" title="Кто я" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/840992/"><img src="./poster_thumbs/thumb400_840992.jpg" title="Иррациональный человек" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/655435/"><img src="./poster_thumbs/thumb400_655435.jpg" title="Вне/себя" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/535317/"><img src="./poster_thumbs/thumb400_535317.jpg" title="Антураж" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/782792/"><img src="./poster_thumbs/thumb400_782792.jpg" title="Шпион" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/195496/"><img src="./poster_thumbs/thumb400_195496.jpg" title="Человек-муравей" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/797587/"><img src="./poster_thumbs/thumb400_797587.jpg" title="Ускорение" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/651628/"><img src="./poster_thumbs/thumb400_651628.jpg" title="Пиксели" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/778646/"><img src="./poster_thumbs/thumb400_778646.jpg" title="Переправа" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/918984/"><img src="./poster_thumbs/thumb400_918984.jpg" title="МУЛЬТ в кино. Выпуск №10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/594554/"><img src="./poster_thumbs/thumb400_594554.jpg" title="Мир Юрского периода" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/840231/"><img src="./poster_thumbs/thumb400_840231.jpg" title="Гороскоп на удачу" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/698193/"><img src="./poster_thumbs/thumb400_698193.jpg" title="Виселица" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/841572/"><img src="./poster_thumbs/thumb400_841572.jpg" title="Бумажные города" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/905045/"><img src="./poster_thumbs/thumb400_905045.jpg" title="Рок Апокалипсис" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/843103/"><img src="./poster_thumbs/thumb400_843103.jpg" title="Citizenfour: Правда Сноудена" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/764613/"><img src="./poster_thumbs/thumb400_764613.jpg" title="Вдали от обезумевшей толпы" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/663695/"><img src="./poster_thumbs/thumb400_663695.jpg" title="Этот неловкий момент" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/692859/"><img src="./poster_thumbs/thumb400_692859.jpg" title="Супер Майк XXL" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/731691/"><img src="./poster_thumbs/thumb400_731691.jpg" title="Третий лишний 2" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/839972/"><img src="./poster_thumbs/thumb400_839972.jpg" title="Убрать из друзей" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/694051/"><img src="./poster_thumbs/thumb400_694051.jpg" title="Миньоны" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/763722/"><img src="./poster_thumbs/thumb400_763722.jpg" title="Похищение Фредди Хайнекена" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/705700/"><img src="./poster_thumbs/thumb400_705700.jpg" title="Однажды" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/765712/"><img src="./poster_thumbs/thumb400_765712.jpg" title="Французский транзит" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/522876/"><img src="./poster_thumbs/thumb400_522876.jpg" title="Век Адалин" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/838962/"><img src="./poster_thumbs/thumb400_838962.jpg" title="Дабл трабл" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/842910/"><img src="./poster_thumbs/thumb400_842910.jpg" title="Хранитель Луны" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/652692/"><img src="./poster_thumbs/thumb400_652692.jpg" title="Разлом Сан-Андреас" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/714846/"><img src="./poster_thumbs/thumb400_714846.jpg" title="​С 5 до 7. Время любовников" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/739944/"><img src="./poster_thumbs/thumb400_739944.jpg" title="Дальняя дорога" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/61261/"><img src="./poster_thumbs/thumb400_61261.jpg" title="Добро пожаловать в рай!" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/688384/"><img src="./poster_thumbs/thumb400_688384.jpg" title="Дом" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/639095/"><img src="./poster_thumbs/thumb400_639095.jpg" title="Большая игра" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/784155/"><img src="./poster_thumbs/thumb400_784155.jpg" title="Гнездо дракона" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/662469/"><img src="./poster_thumbs/thumb400_662469.jpg" title="Ночной беглец" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/763642/"><img src="./poster_thumbs/thumb400_763642.jpg" title="Эффект Лазаря" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/705402/"><img src="./poster_thumbs/thumb400_705402.jpg" title="Овечка Долли была злая и рано умерла" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/843102/"><img src="./poster_thumbs/thumb400_843102.jpg" title="Музеи Ватикана" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/676363/"><img src="./poster_thumbs/thumb400_676363.jpg" title="Василиса" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/810642/"><img src="./poster_thumbs/thumb400_810642.jpg" title="Бабай" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/724982/"><img src="./poster_thumbs/thumb400_724982.jpg" title="Звезда" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/518140/"><img src="./poster_thumbs/thumb400_518140.jpg" title="Репортаж: Апокалипсис" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/705379/"><img src="./poster_thumbs/thumb400_705379.jpg" title="Любит не любит" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/749507/"><img src="./poster_thumbs/thumb400_749507.jpg" title="Пирамида" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/462525/"><img src="./poster_thumbs/thumb400_462525.jpg" title="Серена" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/837504/"><img src="./poster_thumbs/thumb400_837504.jpg" title="Махни крылом" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/512784/"><img src="./poster_thumbs/thumb400_512784.jpg" title="С любовью, Рози" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/693126/"><img src="./poster_thumbs/thumb400_693126.jpg" title="Город героев" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/810248/"><img src="./poster_thumbs/thumb400_810248.jpg" title="День дурака" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/462398/"><img src="./poster_thumbs/thumb400_462398.jpg" title="Уиджи: Доска Дьявола" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/647948/"><img src="./poster_thumbs/thumb400_647948.jpg" title="Навстречу шторму" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/461206/"><img src="./poster_thumbs/thumb400_461206.jpg" title="Черепашки-ниндзя" /></a></div></div></div>
+            <div class="block"><h2>Заебись, чётко! <span>только десятки</span></h2><div class="block-posters"><div><a target="_blank" href="http://www.kinopoisk.ru/film/765103/"><img src="./poster_thumbs/thumb400_765103.jpg" title="Духless 2 — 10/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/757182/"><img src="./poster_thumbs/thumb400_757182.jpg" title="Белый Бог — 10/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/601933/"><img src="./poster_thumbs/thumb400_601933.jpg" title="Территория — 10/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/810243/"><img src="./poster_thumbs/thumb400_810243.jpg" title="Горько! 2 — 10/10" /></a></div></div></div>
+            <div class="block"><h2>Парашный угол <span>только единицы</span></h2><div class="block-posters"><div><a target="_blank" href="http://www.kinopoisk.ru/film/581952/"><img src="./poster_thumbs/thumb400_581952.jpg" title="Лофт — 1/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/734276/"><img src="./poster_thumbs/thumb400_734276.jpg" title="Шаг вперёд: Всё или ничего — 1/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/748663/"><img src="./poster_thumbs/thumb400_748663.jpg" title="Безумная свадьба — 1/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/681881/"><img src="./poster_thumbs/thumb400_681881.jpg" title="Батальонъ — 1/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/824611/"><img src="./poster_thumbs/thumb400_824611.jpg" title="Звериный отряд — 1/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/505966/"><img src="./poster_thumbs/thumb400_505966.jpg" title="Восхождение Юпитер — 1/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/773193/"><img src="./poster_thumbs/thumb400_773193.jpg" title="Медведи-соседи: Зимние каникулы — 1/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/607608/"><img src="./poster_thumbs/thumb400_607608.jpg" title="Пингвины Мадагаскара — 1/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/661911/"><img src="./poster_thumbs/thumb400_661911.jpg" title="Голодные игры: Сойка-пересмешница. Часть I — 1/10" /></a></div><div><a target="_blank" href="http://www.kinopoisk.ru/film/655618/"><img src="./poster_thumbs/thumb400_655618.jpg" title="Домашнее видео — 1/10" /></a></div></div></div>
+            <div class="block"><h2>Проебанные академические часы</h2><div class="block-info"><span style="font: 100px Georgia, serif">145 часов</span></div></div>
+            <div class="block"><div class="block-info"><table><tr><td><h2>Фу, мейнстрим!</h2><ul><li>«Кровавая леди Батори» — 0.042<li>«Битва за Севастополь» — 0.136<li>«Интерстеллар» — 0.194<li>«Король сафари» — 0.199<li>«Вызов бездне 3D» — 0.359</ul></td><td><h2>Хипстер ебаный!</h2><ul><li>«Батальонъ» — 6.428<li>«Безумная свадьба» — 6.361<li>«Мстители: Эра Альтрона» — 6.036<li>«Лофт» — 5.87<li>«Пингвины Мадагаскара» — 5.717</ul></td><td><p><em>Фильмы отсортированы по разнице между моей оценкой и оценкой <strike>быд</strike>Кинопоиска.</em></td></tr></table></div></div>
+            <div class="block">
+                <h2>Диаграмма оценок</h2>
+                <div class="block-info">
+                    <div id="ratings_chart" style="max-width: 600px; height: 400px;"></div>
+                </div>
+            </div>
+
+            <div class="block">
+                <h2>Средняя оценка</h2>
+                <div class="block-info">
+                    <div id="average_chart" style="max-width: 600px; height: 400px;"></div>
+                </div>
+            </div>
+
+            <div class="block">
+                <h2>Просмотры по дням недели</h2>
+                <div class="block-info">
+                    <div id="dayofweek_chart" style="max-width: 600px; height: 400px;"></div>
+                </div>
+            </div>
+
+            <div class="block">
+                <h2>Показываем корреляцию между мной и Кинопоиском <span>или ее отсутствие</span></h2>
+                <div class="block-info">
+                    <div id="correlation_chart" style="max-width: 600px; height: 400px;"></div>
+                </div>
+            </div>
+
+            <div class="block">
+                <h2>Среднестатистический постер</h2>
+                <div class="block-info">
+                    <img src="poster_collages/avgPoster.png" style="margin-left: 30px;" width="270" height="400" />
+                </div>
+            </div>
+
+            <div class="block">
+                <h2>USB-шредер</h2>
+                <div class="block-bigposters">
+                    <img src="poster_collages/vstripePoster.png" style="margin-left: 30px;" width="270" height="400" />
+                    <img src="poster_collages/hstripePoster.png" style="margin-left: 30px;" width="270" height="400" />
+                    <img src="poster_collages/dstripePoster.png" style="margin-left: 30px;" width="270" height="400" />
+                </div>
+            </div>
+
+            <div class="block">
+                <h2>Рубрика «Понеслася!»</h2>
+                <div class="block-bigposters">
+                    <img src="poster_collages/cellPoster.png" style="margin-left: 30px;" width="270" height="400" />
+                    <img src="poster_collages/cstripePoster.png" style="margin-left: 30px;" width="270" height="400" />
+                    <img src="poster_collages/rstripePoster.png" style="margin-left: 30px;" width="270" height="400" />
+                    <img src="poster_collages/sinstripePoster.png" style="margin-left: 30px;" width="270" height="400" />
+                    <img src="poster_collages/cosstripePoster.png" style="margin-left: 30px;" width="270" height="400" />
+                </div>
+            </div>
+
+            <div class="footer">
+                <!-- <div class="footer-info">
+                    <p>Все данные спизжены неправомерно
+                </div> -->
+            </div>
+
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+
+        <!-- <script src="static/js/plugins.js"></script> -->
+        <script src="static/js/main.js"></script>
+    </body>
+</html>

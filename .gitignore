@@ -1,0 +1,8 @@
+.DS_Store
+
+# Настоящий конфиг-файл
+config.inc.php
+
+# Библиотеки, скачанные скриптом composer
+vendor
+
