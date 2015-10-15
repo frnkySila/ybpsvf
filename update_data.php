@@ -767,20 +767,18 @@ if($do_update_kp_ratings) {
 
 if($do_update_a_movie_poster) {
 
-  $res1 = $database->query("SELECT `kinopoisk_url` FROM `movies` WHERE `id` >= ". (int)$which_movie);
+  echo "Щас скачается новый постер для фильма ". $which_movie;
+  flush();
 
-  $movie_url = $res1->fetch_row()[0];
-
-  echo "Щас скачается новый постер для фильма ". $movie_url;
-
-  $img_path = get_movie_info($client, $movie_url)[1];
+  $img_path = get_movie_info($client, $which_movie)[1];
 
   $thumb_path = save_img_thumbnail($client, $img_path);
 
-  $res2 = $database->query("UPDATE `movies` SET `img_remote` = '". $img_path ."', `img_local` = '". $thumb_path ."' WHERE `id` = ". (int)$which_movie);
+  $update_stmt = $database->prepare("UPDATE `movies` SET `img_remote` = ?, `img_local` = ? WHERE `id` = ?");
 
+  $update_stmt->bind_param("sss", $img_path, $thumb_path, $which_movie);
 
-
+  $update_stmt->execute();
 }
 
 if($do_generate_indexhtml) {
