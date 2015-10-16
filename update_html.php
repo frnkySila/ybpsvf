@@ -46,7 +46,6 @@ if($update_html_output_file) {
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Я буду просматривать сейчас все фильмы! — ybpsvf.ru</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
 
         <link rel="stylesheet" href="static/css/normalize.min.css">
         <link rel="stylesheet" href="static/css/main.css">
