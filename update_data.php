@@ -564,7 +564,7 @@ class Ybpsvf_update
     return (($x / $hw) + (($y / $hw) % 10) * 10) % $num_src_images;
   }
 
-  function do_regular_update()
+  function do_update_regular()
   {
     echo "<p>Собираемся скачать список сегодняшних фильмов и добавить новые фильмы в базу.";
     flush();
@@ -616,7 +616,7 @@ class Ybpsvf_update
     unlink($update_html_output_file);
   }
 
-  function do_generate_posters($which_posters)
+  function do_update_collages($which_collages)
   {
     echo "<p>Щас будут генерироваться коллажи из постеров.";
 
@@ -632,63 +632,63 @@ class Ybpsvf_update
       array_push($local_imgs, $next_row[0]);
     }
     
-    if($which_posters[0] == "1") {
+    if($which_collages[0] == "1") {
       $this->draw_poster_collage($local_imgs, "poster_collages/hstripePoster.png", 30, "_get_xy_hstripe");
 
       echo "<p>Сгенерирован коллаж из горизонтальных полосок.";
       flush();
     }
 
-    if($which_posters[1] == "1") {
+    if($which_collages[1] == "1") {
       $this->draw_poster_collage($local_imgs, "poster_collages/vstripePoster.png", 20, "_get_xy_vstripe");
 
       echo "<p>Сгенерирован коллаж из вертикальных полосок.";
       flush();
     }
 
-    if($which_posters[2] == "1") {
+    if($which_collages[2] == "1") {
       $this->draw_poster_collage($local_imgs, "poster_collages/dstripePoster.png", 30, "_get_xy_dstripe");
 
       echo "<p>Сгенерирован коллаж из диагональных полосок.";
       flush();
     }
 
-    if($which_posters[3] == "1") {
+    if($which_collages[3] == "1") {
       $this->draw_poster_collage($local_imgs, "poster_collages/cstripePoster.png", 30, "_get_xy_cstripe");
 
       echo "<p>Сгенерирован коллаж из круговых полосок.";
       flush();
     }
 
-    if($which_posters[4] == "1") {
+    if($which_collages[4] == "1") {
       $this->draw_poster_collage($local_imgs, "poster_collages/rstripePoster.png", 30, "_get_xy_rstripe");
 
       echo "<p>Сгенерирован коллаж из радиальных полосок.";
       flush();
     }
 
-    if($which_posters[5] == "1") {
+    if($which_collages[5] == "1") {
       $this->draw_poster_collage($local_imgs, "poster_collages/sinstripePoster.png", 30, "_get_xy_sinstripe");
 
       echo "<p>Сгенерирован коллаж из синусоидальных полосок.";
       flush();
     }
 
-    if($which_posters[6] == "1") {
+    if($which_collages[6] == "1") {
       $this->draw_poster_collage($local_imgs, "poster_collages/cosstripePoster.png", 20, "_get_xy_cosstripe");
 
       echo "<p>Сгенерирован коллаж из косинусоидальных полосок.";
       flush();
     }
 
-    if($which_posters[7] == "1") {
+    if($which_collages[7] == "1") {
       $this->draw_poster_collage($local_imgs, "poster_collages/cellPoster.png", 100, "_get_xy_cell");
 
       echo "<p>Сгенерирован коллаж из клеточек.";
       flush();
     }
 
-    if($which_posters[8] == "1") {
+    if($which_collages[8] == "1") {
       $this->draw_poster_avg($local_imgs, "poster_collages/avgPoster.png");
     }
   }
@@ -703,20 +703,29 @@ class Ybpsvf_update
     echo "<p>Рейтинги обновлены для следующего количества фильмов: " . $number_updated_ratings . ".";
   }
 
-  function do_update_a_movie_poster($which_movie)
+  function do_update_a_movie_poster($kinopoisk_url)
   {
-    echo "Щас скачается новый постер для фильма ". $which_movie;
+    echo "Щас скачается новый постер для фильма ". $kinopoisk_url;
     flush();
 
-    $img_path = $this->get_movie_info($which_movie)[1];
+    $res1 = $this->database->query("SELECT `id` FROM `movies` WHERE `kinopoisk_url` = '" . $this->database->real_escape_string($kinopoisk_url) . "'");
 
-    $thumb_path = $this->save_img_thumbnail($img_path);
+    if($res1->num_rows) {
+      $img_path = $this->get_movie_info($kinopoisk_url)[1];
 
-    $update_stmt = $this->database->prepare("UPDATE `movies` SET `img_remote` = ?, `img_local` = ? WHERE `id` = ?");
+      $thumb_path = $this->save_img_thumbnail($img_path);
 
-    $update_stmt->bind_param("sss", $img_path, $thumb_path, $which_movie);
+      $update_stmt = $this->database->prepare("UPDATE `movies` SET `img_remote` = ?, `img_local` = ? WHERE `kinopoisk_url` = ?");
 
-    $update_stmt->execute();
+      $update_stmt->bind_param("sss", $img_path, $thumb_path, $kinopoisk_url);
+
+      $update_stmt->execute();
+
+      return true;
+    }
+    else {
+      return false;
+    }
   }
 }
 
@@ -733,31 +742,38 @@ header("Cache-Control: no-cache, must-revalidate");
 echo "<meta charset=\"utf-8\">\n<h1>".time()."</h1><br /><br /><br /><br />\n\n";
 flush();
 
-$mode = isset($_GET['mode']) ? $_GET['mode'] : '';
+$method = isset($_GET['method']) ? $_GET['method'] : '';
 
-switch($mode) {
-case 'posters':
-  $which_posters = isset($_GET['which_posters']) ? $_GET['which_posters'] : '111111111';
-
-  $updater->do_generate_posters($which_posters);
+switch($method) {
+case 'update_regular':
+  $updater->do_update_regular();
+  $updater->do_update_html();
   break;
-case 'kp_ratings':
+case 'update_collages':
+  $which_collages = isset($_GET['which_collages']) ? $_GET['which_collages'] : '111111111';
+
+  $updater->do_update_collages($which_collages);
+  break;
+case 'update_ratings':
   $portion = isset($_GET['portion']) ? $_GET['portion'] : -1;
 
   $updater->do_update_kp_ratings($portion);
   break;
-case 'update_a_movie_poster':
-  if(!isset($_GET['which_movie'])) {
-    echo "Для вызова метода <em>update_a_movie_poster</em> необходим параметр <em>which_movie</em>";
+case 'update_a_poster':
+  if(!isset($_GET['kinopoisk_url'])) {
+    echo "<p>Для вызова метода <em>update_a_movie_poster</em> необходим параметр <em>which_movie</em>";
   }
   else {
-    $updater->do_update_a_movie_poster($_GET['which_movie']);
+    if($updater->do_update_a_movie_poster($_GET['kinopoisk_url'])) {
+      echo "<p>Постер успешно обновлен.";
+    }
+    else {
+      echo "<p>Фильма с таким <em>kinopoisk_url</em> нет в базе.";
+    }
   }
   break;
-case 'reg':
 default:
-  $updater->do_regular_update();
-  $updater->do_update_html();
+  echo "<p>get-параметр <em>method</em> не установлен или в нем написано че-то не то";
 }
 
 echo "<p>Ну, вроде пока всё." ;
