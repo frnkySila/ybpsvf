@@ -237,7 +237,7 @@ class Ybpsvf_update
       $res = $this->database->query("SELECT `kinopoisk_url`, `kinopoisk_score` FROM `movies`");
     }
     else {
-      $res = $this->database->query("SELECT `kinopoisk_url`, `kinopoisk_score` FROM `movies` LIMIT ". $portion * 10 . ", " . 10 . "");
+      $res = $this->database->query("SELECT `kinopoisk_url`, `kinopoisk_score` FROM `movies` LIMIT ". $portion * 5 . ", " . 5 . "");
     }
 
     $stmt = $this->database->prepare("UPDATE `movies` SET `kinopoisk_score` = ? WHERE `kinopoisk_url` = ?");
