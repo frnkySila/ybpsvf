@@ -1,28 +1,9 @@
 <?php
 
-include_once "config.inc.php";
+include "config.inc.php";
 
-if(!isset($_GET['a']) || $_GET['a'] != $SECRET) {
-  echo "<p>Самое начало файла:";
-  echo '<p><pre>
-&lt;?php
-
-if(!isset($_GET[\'a\']) || $_GET[\'a\'] != \' ... \') {
-  echo "&lt;p>Самое начало файла:"
-  echo \'&lt;p>&lt;pre>
-    &amp;lt;?php
-
-    if(!isset($_GET[\\\'a\\\']) || $_GET[\\\'a\\\'] != \\\' ... \\\') {
-      echo "&amp;lt;p>Самое начало файла:"
-      echo \\\'&amp;lt;p>&amp;lt;pre>
-        ...
-      &amp;lt;/pre>\\\';
-      die();
-    }
-  &lt;/pre>\';
-  die();
-}
-  </pre>';
+if(!isset($_GET['secret']) || $_GET['secret'] != $CONFIG['SECRET']) {
+  echo "<p>Неправильный секрет";
   die();
 }
 
@@ -30,7 +11,7 @@ require 'vendor/autoload.php';
 
 $client = new GuzzleHttp\Client(['defaults' => ['headers' => ['Accept-Encoding' => 'gzip, deflate, compress', 'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.71 (KHTML, like Gecko) Version/6.1 Safari/537.71']] ]);
 
-$database = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
+$database = new mysqli($CONFIG['DB_HOST'], $CONFIG['DB_USER'], $CONFIG['DB_PASS'], $CONFIG['DB_NAME']);
 $database->set_charset("utf8");
 
 if(!isset($update_html_output_file)) $update_html_output_file = false;
@@ -219,7 +200,7 @@ if($update_html_output_file) {
                         // Раньше был цикл с array_rand, но он мог закциклиться, если в массиве не было ни одного нормального теглайна
                         shuffle($taglines);
 
-                        $selected_tagline = $DEFAULT_TAGLINE;
+                        $selected_tagline = $CONFIG['DEFAULT_TAGLINE'];
 
                         for($i = 0; $i < count($taglines); $i++) {
                             if($taglines[$i] != "") {
