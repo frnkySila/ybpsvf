@@ -619,7 +619,7 @@ class Ybpsvf_update
     unlink($update_html_output_file);
   }
 
-  function do_update_collages($which_collages)
+  function do_update_collages()
   {
     echo "<p>Щас будут генерироваться коллажи из постеров.";
 
@@ -634,66 +634,92 @@ class Ybpsvf_update
     while($next_row = $res1->fetch_row()) {
       array_push($local_imgs, $next_row[0]);
     }
+
+    $collages = Array(
+      Array(
+        "poster_collages/hstripePoster.png",
+        function($local_imgs, $filename) {
+          $this->draw_poster_collage($local_imgs, $filename, 30, "_get_xy_hstripe");
+        },
+        "<p>Сгенерирован коллаж из горизонтальных полосок.",
+      ),
     
-    if($which_collages[0] == "1") {
-      $this->draw_poster_collage($local_imgs, "poster_collages/hstripePoster.png", 30, "_get_xy_hstripe");
+      Array(
+        "poster_collages/vstripePoster.png",
+        function($local_imgs, $filename) {
+          $this->draw_poster_collage($local_imgs, $filename, 20, "_get_xy_vstripe");
+        },
+        "<p>Сгенерирован коллаж из вертикальных полосок.",
+      ),
 
-      echo "<p>Сгенерирован коллаж из горизонтальных полосок.";
-      flush();
+      Array(
+        "poster_collages/dstripePoster.png",
+        function($local_imgs, $filename) {
+          $this->draw_poster_collage($local_imgs, $filename, 30, "_get_xy_dstripe");
+        },
+        "<p>Сгенерирован коллаж из диагональных полосок.",
+      ),
+
+      Array(
+        "poster_collages/cstripePoster.png",
+        function($local_imgs, $filename) {
+          $this->draw_poster_collage($local_imgs, $filename, 30, "_get_xy_cstripe");
+        },
+        "<p>Сгенерирован коллаж из круговых полосок.",
+      ),
+
+      Array(
+        "poster_collages/rstripePoster.png",
+        function($local_imgs, $filename) {
+          $this->draw_poster_collage($local_imgs, $filename, 30, "_get_xy_rstripe");
+        },
+        "<p>Сгенерирован коллаж из радиальных полосок.",
+      ),
+
+      Array(
+        "poster_collages/sinstripePoster.png",
+        function($local_imgs, $filename) {
+          $this->draw_poster_collage($local_imgs, $filename, 30, "_get_xy_sinstripe");
+        },
+        "<p>Сгенерирован коллаж из синусоидальных полосок.",
+      ),
+
+      Array(
+        "poster_collages/cosstripePoster.png",
+        function($local_imgs, $filename) {
+          $this->draw_poster_collage($local_imgs, $filename, 20, "_get_xy_cosstripe");
+        },
+        "<p>Сгенерирован коллаж из косинусоидальных полосок.",
+      ),
+
+      Array(
+        "poster_collages/cellPoster.png",
+        function($local_imgs, $filename) {
+          $this->draw_poster_collage($local_imgs, $filename, 100, "_get_xy_cell");
+        },
+        "<p>Сгенерирован коллаж из клеточек.",
+      ),
+      Array(
+        "poster_collages/avgPoster.png",
+        function($local_imgs, $filename) {
+          $this->draw_poster_avg($local_imgs, $filename);
+        },
+        "",
+      ),
+    );
+
+    foreach($collages as $collage) {
+      if(filemtime($collage[0]) < filemtime("index.html")) {
+        $collage[1]($local_imgs, $collage[0]);
+
+        echo $collage[2];
+        flush();
+
+        return;
+      }
     }
 
-    if($which_collages[1] == "1") {
-      $this->draw_poster_collage($local_imgs, "poster_collages/vstripePoster.png", 20, "_get_xy_vstripe");
-
-      echo "<p>Сгенерирован коллаж из вертикальных полосок.";
-      flush();
-    }
-
-    if($which_collages[2] == "1") {
-      $this->draw_poster_collage($local_imgs, "poster_collages/dstripePoster.png", 30, "_get_xy_dstripe");
-
-      echo "<p>Сгенерирован коллаж из диагональных полосок.";
-      flush();
-    }
-
-    if($which_collages[3] == "1") {
-      $this->draw_poster_collage($local_imgs, "poster_collages/cstripePoster.png", 30, "_get_xy_cstripe");
-
-      echo "<p>Сгенерирован коллаж из круговых полосок.";
-      flush();
-    }
-
-    if($which_collages[4] == "1") {
-      $this->draw_poster_collage($local_imgs, "poster_collages/rstripePoster.png", 30, "_get_xy_rstripe");
-
-      echo "<p>Сгенерирован коллаж из радиальных полосок.";
-      flush();
-    }
-
-    if($which_collages[5] == "1") {
-      $this->draw_poster_collage($local_imgs, "poster_collages/sinstripePoster.png", 30, "_get_xy_sinstripe");
-
-      echo "<p>Сгенерирован коллаж из синусоидальных полосок.";
-      flush();
-    }
-
-    if($which_collages[6] == "1") {
-      $this->draw_poster_collage($local_imgs, "poster_collages/cosstripePoster.png", 20, "_get_xy_cosstripe");
-
-      echo "<p>Сгенерирован коллаж из косинусоидальных полосок.";
-      flush();
-    }
-
-    if($which_collages[7] == "1") {
-      $this->draw_poster_collage($local_imgs, "poster_collages/cellPoster.png", 100, "_get_xy_cell");
-
-      echo "<p>Сгенерирован коллаж из клеточек.";
-      flush();
-    }
-
-    if($which_collages[8] == "1") {
-      $this->draw_poster_avg($local_imgs, "poster_collages/avgPoster.png");
-    }
+    echo "<p>Все коллажи свежие";
   }
 
   function do_update_kp_ratings($portion)
@@ -747,9 +773,7 @@ case 'update_regular':
   $updater->do_update_html();
   break;
 case 'update_collages':
-  $which_collages = isset($_GET['which_collages']) ? $_GET['which_collages'] : '111111111';
-
-  $updater->do_update_collages($which_collages);
+  $updater->do_update_collages();
   break;
 case 'update_ratings':
   $portion = isset($_GET['portion']) ? $_GET['portion'] : -1;
