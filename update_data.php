@@ -14,10 +14,13 @@ ini_set('display_errors', '1');
 
 class Ybpsvf_update
 {
-  function __construct($client, $database, $config)
+  function __construct($config)
   {
-    $this->client = $client;
-    $this->database = $database;
+    $this->client = new GuzzleHttp\Client(['defaults' => ['headers' => ['Accept-Encoding' => 'gzip, deflate, compress', 'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.71 (KHTML, like Gecko) Version/6.1 Safari/537.71']] ]);
+
+    $this->database = new mysqli($config['DB_HOST'], $config['DB_USER'], $config['DB_PASS'], $config['DB_NAME']);
+    $this->database->set_charset("utf8");
+
     $this->config = $config;
   }
 
@@ -729,13 +732,7 @@ class Ybpsvf_update
   }
 }
 
-
-$client = new GuzzleHttp\Client(['defaults' => ['headers' => ['Accept-Encoding' => 'gzip, deflate, compress', 'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.71 (KHTML, like Gecko) Version/6.1 Safari/537.71']] ]);
-
-$database = new mysqli($CONFIG['DB_HOST'], $CONFIG['DB_USER'], $CONFIG['DB_PASS'], $CONFIG['DB_NAME']);
-$database->set_charset("utf8");
-
-$updater = new Ybpsvf_update($client, $database, $CONFIG);
+$updater = new Ybpsvf_update($CONFIG);
 
 header("Cache-Control: no-cache, must-revalidate");
 
