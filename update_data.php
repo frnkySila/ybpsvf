@@ -2,15 +2,15 @@
 
 include_once "config.inc.php";
 
-if(!isset($_GET['secret']) || $_GET['secret'] != $CONFIG['SECRET']) {
-  echo "<p>Неправильный секрет";
-  die();
-}
-
 require 'vendor/autoload.php';
 
 ini_set('display_errors', '1');
 
+
+function check_secret($secret)
+{
+  return isset($_GET['secret']) && $_GET['secret'] == $secret;
+}
 
 class Ybpsvf_update
 {
@@ -612,6 +612,8 @@ class Ybpsvf_update
 
     $update_html_output_file = time() . "_index.html";
 
+    $secret = $this->config['SECRET'];
+
     include "update_html.php";
 
     copy($update_html_output_file, "index.html");
@@ -769,29 +771,47 @@ $method = isset($_GET['method']) ? $_GET['method'] : '';
 
 switch($method) {
 case 'update_regular':
-  $updater->do_update_regular();
-  $updater->do_update_html();
+  if(is_file("index.html") && time() - filemtime("index.html") < 6 * 60 * 60 && !check_secret($CONFIG['SECRET'])) {
+      echo "<p>Обновление уже происходило не ранее, чем 6 часов назад. Чтобы обновить ее еще раз, отправьте запрос с секретом.";
+      echo "<p>Если секрет уже есть, то он неправильный.";
+  }
+  else {
+    $updater->do_update_regular();
+    $updater->do_update_html();
+  }
+
   break;
 case 'update_collages':
   $updater->do_update_collages();
   break;
 case 'update_ratings':
-  $portion = isset($_GET['portion']) ? $_GET['portion'] : -1;
-
-  $updater->do_update_kp_ratings($portion);
-  break;
-case 'update_a_poster':
-  if(!isset($_GET['kinopoisk_url'])) {
-    echo "<p>Для вызова метода <em>update_a_movie_poster</em> необходим параметр <em>which_movie</em>";
+  if(!check_secret($CONFIG['SECRET'])) {
+    echo "<p>Этот метод без секрета не работает.";
   }
   else {
-    if($updater->do_update_a_movie_poster($_GET['kinopoisk_url'])) {
-      echo "<p>Постер успешно обновлен.";
+    $portion = isset($_GET['portion']) ? $_GET['portion'] : -1;
+    $updater->do_update_kp_ratings($portion);
+  }
+
+  break;
+case 'update_a_poster':
+  if(!check_secret($CONFIG['SECRET'])) {
+    echo "<p>Этот метод без секрета не работает.";
+  }
+  else {
+    if(!isset($_GET['kinopoisk_url'])) {
+      echo "<p>Для вызова метода <em>update_a_movie_poster</em> необходим параметр <em>which_movie</em>";
     }
     else {
-      echo "<p>Фильма с таким <em>kinopoisk_url</em> нет в базе.";
+      if($updater->do_update_a_movie_poster($_GET['kinopoisk_url'])) {
+        echo "<p>Постер успешно обновлен.";
+      }
+      else {
+        echo "<p>Фильма с таким <em>kinopoisk_url</em> нет в базе.";
+      }
     }
   }
+
   break;
 default:
   echo "<p>get-параметр <em>method</em> не установлен или в нем написано че-то не то";

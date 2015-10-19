@@ -2,9 +2,15 @@
 
 include "config.inc.php";
 
-if(!isset($_GET['secret']) || $_GET['secret'] != $CONFIG['SECRET']) {
-  echo "<p>Неправильный секрет";
-  die();
+if(!isset($secret)) {
+    if(!isset($_GET['secret'])) {
+        die();
+    }
+    $secret = $_GET['secret'];
+}
+
+if($secret != $CONFIG['SECRET']) {
+    die();
 }
 
 require 'vendor/autoload.php';
