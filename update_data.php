@@ -207,7 +207,7 @@ class Ybpsvf_update
         continue;
       }
 
-      $movie_info = get_movie_info($movie_url);
+      $movie_info = $this->get_movie_info($movie_url);
 
       $movie_name = $movie_info[0];
       $movie_img_remote = $movie_info[1];
